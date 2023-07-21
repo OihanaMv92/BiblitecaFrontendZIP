@@ -1,0 +1,56 @@
+<div class="FormRegistr">
+  <h2>Editar Libro:</h2>
+  <form [formGroup]="formulario">
+    <div class="form-group">
+      <label for="isbnLibro">ISBN Libro:</label>
+      <input type="number" formControlName="isbnLibro" id="fndoDisabled" class="form-control" [value]="libro.isbnLibro" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="nombreLibro">Nombre Libro:</label>
+      <input type="text" formControlName="nombreLibro" class="form-control" [value]="libro.nombreLibro">
+    </div>
+
+    <div class="form-group">
+      <label for="descripcionLibro">Descripción Libro:</label>
+      <input type="text" formControlName="descripcionLibro" class="form-control" [value]="libro.descripcionLibro">
+    </div>
+
+    <div class="form-group">
+      <label for="tipoLibro">Tipo Libro:</label>
+      <select formControlName="tipoLibro" class="form-control">
+        <option *ngFor="let genero of generos" [value]="genero">{{ genero }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaAlquiler">Fecha Alquiler:</label>
+      <input type="datetime" formControlName="fechaAlquiler" class="form-control" [value]="libro.fechaAlquiler">
+    </div>
+
+    <div class="form-group">
+      <label for="idiomaLibro">Idioma Libro:</label>
+      <input type="text" formControlName="idiomaLibro" class="form-control" [value]="libro.idiomaLibro">
+    </div>
+
+    <div class="form-group">
+      <label for="dniUsuario">DNI Usuario:</label>
+      <select formControlName="dniUsuario" class="form-control" >
+        <option *ngFor="let usuario of usuarios" [value]="usuario.dniUsuario">{{ usuario.dniUsuario }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="dniAutor">DNI Autor:</label>
+      <select formControlName="dniAutor" class="form-control" >
+        <option *ngFor="let autor of autores" [value]="autor.dniAutor">{{ autor.dniAutor }}</option>
+      </select>
+    </div> 
+
+    <br>
+
+    <button class="btn btn-primary" type="submit" (click)="actualizarLibro()">Guardar</button>
+    <button class="btn btn-success btn-volver" type="submit" routerLink="/libro">Volver</button>
+
+  </form>
+</div>

@@ -1,0 +1,22 @@
+.mat-success {
+    background-color:rgb(110, 218, 240);
+    color: white
+    
+  }
+  .FormRegistr{
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-top:5%;
+}
+.half-width-button {
+  width: 15%; 
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 20px; 
+}
+
+
+
+  
+

@@ -1,0 +1,29 @@
+
+.mat-success {
+    background-color:rgb(110, 218, 240);
+    color: white
+    
+  }
+  .FormRegistr{
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-top:5%;
+}
+#btn {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+
+}
+.inline-buttons-container button:first-child {
+  margin-right: 10px;
+}
+.half-width-button {
+  width: 15%; 
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 20px; 
+}
+
+

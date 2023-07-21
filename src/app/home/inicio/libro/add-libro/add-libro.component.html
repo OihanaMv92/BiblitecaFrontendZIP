@@ -1,0 +1,81 @@
+<div class="FormRegistr">
+  <h2>Crear Libro:</h2>
+  <form [formGroup]="formulario" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="isbnLibro">ISBN Libro:</label>
+      <input type="text" formControlName="isbnLibro" class="form-control"
+        [class.is-invalid]="formulario.controls['isbnLibro'].invalid && (formulario.controls['isbnLibro'].touched || formulario.controls['isbnLibro'].dirty)"
+        [class.is-valid]="formulario.controls['isbnLibro'].valid && (formulario.controls['isbnLibro'].touched || formulario.controls['isbnLibro'].dirty)">
+      <div *ngIf="formulario.controls['isbnLibro'].invalid && (formulario.controls['isbnLibro'].touched || formulario.controls['isbnLibro'].dirty)" class="invalid-feedback">El ISBN del libro es inválido</div>
+    </div>
+
+    <div class="form-group">
+      <label for="nombreLibro">Nombre Libro:</label>
+      <input type="text" formControlName="nombreLibro" class="form-control"
+        [class.is-invalid]="formulario.controls['nombreLibro'].invalid && (formulario.controls['nombreLibro'].touched || formulario.controls['nombreLibro'].dirty)"
+        [class.is-valid]="formulario.controls['nombreLibro'].valid && (formulario.controls['nombreLibro'].touched || formulario.controls['nombreLibro'].dirty)">
+      <div *ngIf="formulario.controls['nombreLibro'].invalid && (formulario.controls['nombreLibro'].touched || formulario.controls['nombreLibro'].dirty)" class="invalid-feedback">El nombre del libro es inválido</div>
+    </div>
+
+    <div class="form-group">
+      <label for="descripcionLibro">Descripción Libro:</label>
+      <input type="text" formControlName="descripcionLibro" class="form-control"
+        [class.is-invalid]="formulario.controls['descripcionLibro'].invalid && (formulario.controls['descripcionLibro'].touched || formulario.controls['descripcionLibro'].dirty)"
+        [class.is-valid]="formulario.controls['descripcionLibro'].valid && (formulario.controls['descripcionLibro'].touched || formulario.controls['descripcionLibro'].dirty)">
+      <div *ngIf="formulario.controls['descripcionLibro'].invalid && (formulario.controls['descripcionLibro'].touched || formulario.controls['descripcionLibro'].dirty)" class="invalid-feedback">La descripción del libro es inválida</div>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoLibro">Tipo Libro:</label>
+      <select formControlName="tipoLibro" class="form-control"
+        [class.is-invalid]="formulario.controls['tipoLibro'].invalid && (formulario.controls['tipoLibro'].touched || formulario.controls['tipoLibro'].dirty)"
+        [class.is-valid]="formulario.controls['tipoLibro'].valid && (formulario.controls['tipoLibro'].touched || formulario.controls['tipoLibro'].dirty)">
+        <option *ngFor="let genero of generos" [value]="genero">{{ genero }}</option>
+      </select>
+      <div *ngIf="formulario.controls['tipoLibro'].invalid && (formulario.controls['tipoLibro'].touched || formulario.controls['tipoLibro'].dirty)" class="invalid-feedback">El tipo de libro es inválido</div>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaAlquiler">Fecha Alquiler:</label>
+      <input type="date" formControlName="fechaAlquiler" class="form-control"
+        [class.is-invalid]="formulario.controls['fechaAlquiler'].invalid && (formulario.controls['fechaAlquiler'].touched || formulario.controls['fechaAlquiler'].dirty)"
+        [class.is-valid]="formulario.controls['fechaAlquiler'].valid && (formulario.controls['fechaAlquiler'].touched || formulario.controls['fechaAlquiler'].dirty)">
+      <div *ngIf="formulario.controls['fechaAlquiler'].invalid && (formulario.controls['fechaAlquiler'].touched || formulario.controls['fechaAlquiler'].dirty)" class="invalid-feedback">La fecha de alquiler es inválida</div>
+    </div>
+
+    <div class="form-group">
+      <label for="idiomaLibro">Idioma Libro:</label>
+      <input type="text" formControlName="idiomaLibro" class="form-control"
+        [class.is-invalid]="formulario.controls['idiomaLibro'].invalid && (formulario.controls['idiomaLibro'].touched || formulario.controls['idiomaLibro'].dirty)"
+        [class.is-valid]="formulario.controls['idiomaLibro'].valid && (formulario.controls['idiomaLibro'].touched || formulario.controls['idiomaLibro'].dirty)">
+      <div *ngIf="formulario.controls['idiomaLibro'].invalid && (formulario.controls['idiomaLibro'].touched || formulario.controls['idiomaLibro'].dirty)" class="invalid-feedback">El idioma del libro es inválido</div>
+    </div>
+
+    <div class="form-group">
+      <label for="dniUsuario">DNI Usuario:</label>
+      <select formControlName="dniUsuario" class="form-control"
+        [class.is-invalid]="formulario.controls['dniUsuario'].invalid && (formulario.controls['dniUsuario'].touched || formulario.controls['dniUsuario'].dirty)"
+        [class.is-valid]="formulario.controls['dniUsuario'].valid && (formulario.controls['dniUsuario'].touched || formulario.controls['dniUsuario'].dirty)">
+        <option *ngFor="let usuario of usuarios" [value]="usuario.dniUsuario">{{ usuario.dniUsuario }} {{usuario.nombreUsuario}}</option>
+      </select>
+      <div *ngIf="formulario.controls['dniUsuario'].invalid && (formulario.controls['dniUsuario'].touched || formulario.controls['dniUsuario'].dirty)" class="invalid-feedback">El DNI del usuario es inválido</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="dniAutor">DNI Autor:</label>
+      <select formControlName="dniAutor" class="form-control"
+        [class.is-invalid]="formulario.controls['dniAutor'].invalid && (formulario.controls['dniAutor'].touched || formulario.controls['dniAutor'].dirty)"
+        [class.is-valid]="formulario.controls['dniAutor'].valid && (formulario.controls['dniAutor'].touched || formulario.controls['dniAutor'].dirty)">
+        <option *ngFor="let autor of autores" [value]="autor.dniAutor">{{ autor.dniAutor }} {{autor.nombreAutor}}</option>
+      </select>
+      <div *ngIf="formulario.controls['dniAutor'].invalid && (formulario.controls['dniAutor'].touched || formulario.controls['dniAutor'].dirty)" class="invalid-feedback">El DNI del autor es inválido</div>
+    </div>
+
+    <br>
+
+    <button class="btn btn-primary" type="button" (click)="guardarLibro()">Guardar</button>
+    <button class="btn btn-success btn-volver" type="submit" routerLink="/libro">Volver</button>
+
+
+  </form>
+</div>

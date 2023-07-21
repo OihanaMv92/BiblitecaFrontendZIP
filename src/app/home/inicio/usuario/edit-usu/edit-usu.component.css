@@ -1,0 +1,17 @@
+.mat-success {
+    background-color:rgb(110, 218, 240);
+    color: white
+    
+  }
+  .FormRegistr{
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-top:5%;
+}
+
+.btn-volver {
+  margin-left: 10px;  
+  }
+  #fndoDisabled{
+    background-color: rgba(174, 173, 173, 0.17);
+  }

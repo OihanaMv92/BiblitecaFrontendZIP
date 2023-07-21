@@ -1,0 +1,66 @@
+<div class="FormRegistr">
+  <h2>Crear Usuario:</h2>
+  <form [formGroup]="formulario" class="needs-validation" novalidate>
+    <div>
+      <div class="form-group">
+        <label for="dniUsuario">DNI Usuario:</label>
+        <input type="text" formControlName="dniUsuario" class="form-control"
+          [class.is-invalid]="formulario.controls['dniUsuario'].invalid && (formulario.controls['dniUsuario'].touched || formulario.controls['dniUsuario'].dirty)"
+          [class.is-valid]="formulario.controls['dniUsuario'].valid && (formulario.controls['dniUsuario'].touched || formulario.controls['dniUsuario'].dirty)">
+        <div *ngIf="formulario.controls['dniUsuario'].invalid && (formulario.controls['dniUsuario'].touched || formulario.controls['dniUsuario'].dirty)" class="invalid-feedback">
+          El DNI del usuario es inválido
+        </div>
+        <div *ngIf="formulario.controls['dniUsuario'].valid && (formulario.controls['dniUsuario'].touched || formulario.controls['dniUsuario'].dirty)" class="valid-feedback">
+          El DNI del usuario es válido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nombreUsuario">Nombre Usuario:</label>
+        <input type="text" formControlName="nombreUsuario" class="form-control" 
+          [class.is-invalid]="formulario.controls['nombreUsuario'].invalid && (formulario.controls['nombreUsuario'].touched || formulario.controls['nombreUsuario'].dirty)"
+          [class.is-valid]="formulario.controls['nombreUsuario'].valid && (formulario.controls['nombreUsuario'].touched || formulario.controls['nombreUsuario'].dirty)">
+        <div *ngIf="formulario.controls['nombreUsuario'].invalid && (formulario.controls['nombreUsuario'].touched || formulario.controls['nombreUsuario'].dirty)" class="invalid-feedback">El nombre del usuario es inválido</div>
+      </div>
+
+      <div class="form-group">
+        <label for="apellidosUsuario">Apellidos Usuario:</label>
+        <input type="text" formControlName="apellidosUsuario" class="form-control" 
+          [class.is-invalid]="formulario.controls['apellidosUsuario'].invalid && (formulario.controls['apellidosUsuario'].touched || formulario.controls['apellidosUsuario'].dirty)"
+          [class.is-valid]="formulario.controls['apellidosUsuario'].valid && (formulario.controls['apellidosUsuario'].touched || formulario.controls['apellidosUsuario'].dirty)">
+        <div *ngIf="formulario.controls['apellidosUsuario'].invalid && (formulario.controls['apellidosUsuario'].touched || formulario.controls['apellidosUsuario'].dirty)" class="invalid-feedback">Los apellidos del usuario son inválidos</div>
+      </div>
+
+      <div class="form-group">
+        <label for="fechaInscripcionUsuario">Fecha de Inscripción:</label>
+        <input type="date" formControlName="fechaInscripcionUsuario" placeholder="dd-mm-yyyy" class="form-control" 
+          [class.is-invalid]="formulario.controls['fechaInscripcionUsuario'].invalid && (formulario.controls['fechaInscripcionUsuario'].touched || formulario.controls['fechaInscripcionUsuario'].dirty)"
+          [class.is-valid]="formulario.controls['fechaInscripcionUsuario'].valid && (formulario.controls['fechaInscripcionUsuario'].touched || formulario.controls['fechaInscripcionUsuario'].dirty)">
+        <div *ngIf="formulario.controls['fechaInscripcionUsuario'].invalid && (formulario.controls['fechaInscripcionUsuario'].touched || formulario.controls['fechaInscripcionUsuario'].dirty)" class="invalid-feedback">La fecha de inscripción es inválida</div>
+      </div>
+
+      <div class="form-group">
+        <label for="telefonoUsuario">Teléfono Usuario:</label>
+        <input type="number" formControlName="telefonoUsuario" class="form-control" 
+          [class.is-invalid]="formulario.controls['telefonoUsuario'].invalid && (formulario.controls['telefonoUsuario'].touched || formulario.controls['telefonoUsuario'].dirty)"
+          [class.is-valid]="formulario.controls['telefonoUsuario'].valid && (formulario.controls['telefonoUsuario'].touched || formulario.controls['telefonoUsuario'].dirty)">
+        <div *ngIf="formulario.controls['telefonoUsuario'].invalid && (formulario.controls['telefonoUsuario'].touched || formulario.controls['telefonoUsuario'].dirty)" class="invalid-feedback">El teléfono del usuario es inválido</div>
+      </div>
+
+      <div class="form-group">
+        <label for="emailUsuario">Email Usuario:</label>
+        <input type="email" formControlName="emailUsuario" class="form-control" 
+          [class.is-invalid]="formulario.controls['emailUsuario'].invalid && (formulario.controls['emailUsuario'].touched || formulario.controls['emailUsuario'].dirty)"
+          [class.is-valid]="formulario.controls['emailUsuario'].valid && (formulario.controls['emailUsuario'].touched || formulario.controls['emailUsuario'].dirty)">
+        <div *ngIf="formulario.controls['emailUsuario'].invalid && (formulario.controls['emailUsuario'].touched || formulario.controls['emailUsuario'].dirty)" class="invalid-feedback">El email del usuario es inválido</div>
+      </div>
+    </div>
+
+    <br>
+
+
+    <button class="btn btn-primary" type="submit" (click)="guardarUsuario(usuario)">Guardar</button>
+    <button class="btn btn-success btn-volver" routerLink="/usuario">Volver</button>
+
+  </form>
+</div>

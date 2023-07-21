@@ -1,0 +1,17 @@
+.FormRegistr{
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-top:5%;
+}
+.btn-volver {
+    margin-left: 10px;  
+    }
+    .invalid-input {
+        border-color: red;
+      }
+      
+      .invalid-feedback {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+      }

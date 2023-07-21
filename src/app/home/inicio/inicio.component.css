@@ -1,0 +1,27 @@
+.mat-success {
+    background-color:rgb(110, 218, 240);
+    color: white
+    
+  }
+
+
+    .btn{
+        text-align: center;
+        background-color: rgba(238, 174, 236, 0.446);
+
+        color: rgb(0, 0, 0);
+        /* border: 2px solid rgb(255, 255, 255); */
+        width: 30%;
+        margin: 10px;
+
+    }
+
+      @media (max-width: 850px) {
+        .btn{
+            /* border: 2px solid rgb(255, 255, 255); */
+            width: 75%;
+    
+          }
+      }
+  
+

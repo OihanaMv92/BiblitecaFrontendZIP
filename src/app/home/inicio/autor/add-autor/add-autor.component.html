@@ -1,0 +1,39 @@
+<div class="FormRegistr">
+  <h2>Crear Autor:</h2>
+  <form [formGroup]="formulario" class="needs-validation" novalidate>
+    <div>
+      <div class="form-group">
+        <label for="dniAutor">DNI Autor:</label>
+        <input type="text" formControlName="dniAutor" class="form-control" 
+          [class.is-invalid]="formulario.controls['dniAutor'].invalid && (formulario.controls['dniAutor'].touched || formulario.controls['dniAutor'].dirty)"
+          [class.is-valid]="formulario.controls['dniAutor'].valid && (formulario.controls['dniAutor'].touched || formulario.controls['dniAutor'].dirty)">
+        <div *ngIf="formulario.controls['dniAutor'].invalid && (formulario.controls['dniAutor'].touched || formulario.controls['dniAutor'].dirty)" class="invalid-feedback">El DNI del autor es inválido</div>
+      </div>
+
+      <div class="form-group">
+        <label for="nombreAutor">Nombre Autor:</label>
+        <input type="text" formControlName="nombreAutor" class="form-control" [class.is-invalid]="formulario.controls['nombreAutor'].invalid && (formulario.controls['nombreAutor'].touched || formulario.controls['nombreAutor'].dirty)">
+        <div *ngIf="formulario.controls['nombreAutor'].invalid && (formulario.controls['nombreAutor'].touched || formulario.controls['nombreAutor'].dirty)" class="invalid-feedback">El nombre del autor es inválido</div>
+      </div>
+
+      <div class="form-group">
+        <label for="apellidosAutor">Apellidos Autor:</label>
+        <input type="text" formControlName="apellidosAutor" class="form-control" [class.is-invalid]="formulario.controls['apellidosAutor'].invalid && (formulario.controls['apellidosAutor'].touched || formulario.controls['apellidosAutor'].dirty)">
+        <div *ngIf="formulario.controls['apellidosAutor'].invalid && (formulario.controls['apellidosAutor'].touched || formulario.controls['apellidosAutor'].dirty)" class="invalid-feedback">El Apellido del autor es inválido</div>
+      </div>
+
+      <div class="form-group">
+        <label for="lenguaMaterna">Lengua Materna:</label>
+        <input type="text" formControlName="lenguaMaterna" class="form-control" [class.is-invalid]="formulario.controls['lenguaMaterna'].invalid && (formulario.controls['lenguaMaterna'].touched || formulario.controls['lenguaMaterna'].dirty)">
+        <div *ngIf="formulario.controls['lenguaMaterna'].invalid && (formulario.controls['lenguaMaterna'].touched || formulario.controls['lenguaMaterna'].dirty)" class="invalid-feedback">La lengua materna del autor es inválida</div>
+      </div>
+    </div>
+
+    <br>
+
+
+    <button class="btn btn-primary" type="submit" (click)="guardarAutor(autor)">Guardar</button>
+    <button class="btn btn-success btn-volver" routerLink="/autor">Volver</button>
+    
+  </form>
+</div>

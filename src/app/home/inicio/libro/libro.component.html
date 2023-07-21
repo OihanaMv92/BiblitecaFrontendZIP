@@ -1,0 +1,51 @@
+
+<div class="container py-4">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <h3 class="fw-semibold">Libros</h3>
+            <button class="btn btn-primary" routerLink="addLibro">Crear Libro</button>
+          </div>
+      <div class="card-body">
+        <table class="table table-hover text-center">
+            <thead>
+                <tr>
+                    <th>Isbn Libro:</th>
+                    <th>Nombre Libro:</th>
+                    <th>Descripcion Libro:</th>
+                    <th>Tipo Libro:</th>
+                    <th>Fecha Alquiler Libro:</th>
+                    <th>Idioma Libro:</th>
+                    <th>Usuario:</th>
+                    <th>Autor:</th> 
+         
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let libro of libros">
+                  <td>{{libro.isbnLibro}}</td>
+                  <td>{{libro.nombreLibro}}</td>
+                  <td>{{libro.descripcionLibro}}</td>
+                  <td>{{libro.tipoLibro}}</td>
+                  <td>{{libro.fechaAlquiler}}</td>
+                  <td>{{libro.idiomaLibro}}</td>
+                  <td>{{libro.usuario.nombreUsuario}}  </td>
+                  <td>{{libro.autor.nombreAutor}}</td>
+ <td>
+    <div class="inline-buttons-container">               
+    <div id="btn">
+        <button class="btn btn-warning " routerLink="editLibro" (click)="editarLibro(libro.isbnLibro)">Editar</button>
+        <button class="btn btn-danger" (click)="eliminarLibro(libro.isbnLibro)">Eliminar</button>
+    </div>
+    </div>
+                </td>
+                </tr>
+              </tbody>
+        </table>
+        
+      </div>
+      <div class="button-container d-flex justify-content-center">
+        <button class="btn btn-success half-width-button" routerLink="/">Volver</button>
+      </div>
+    </div>
+</div>
+

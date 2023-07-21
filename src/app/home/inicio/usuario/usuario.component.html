@@ -1,0 +1,44 @@
+<div class="container p-4">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <h3 class="fw-semibold">Usuarios</h3>
+            <button class="btn btn-primary" routerLink="addUsu">Crear Usuario</button>
+          </div>
+      <div class="card-body">
+        <table class="table table-hover text-center">
+            <thead>
+                <tr>
+                    <th>Dni Usuario:</th>
+                    <th>nombre Usuario:</th>
+                    <th>Apellidos Usuario:</th>
+                    <th>Fecha Inscripcion Usuario:</th>
+                    <th>Telefono Usuario:</th>
+                    <th>Email Usuario:</th>
+         
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let usuario of usuarios">
+                  <td>{{ usuario.dniUsuario }}</td>
+                  <td>{{ usuario.nombreUsuario }}</td>
+                  <td>{{ usuario.apellidosUsuario }}</td>
+                  <td>{{ usuario.fechaInscripcionUsuario}}</td>
+                  <td>{{ usuario.telefonoUsuario}}</td>
+                  <td>{{ usuario.emailUsuario}}</td>
+                  <td>
+                    
+                    
+                    <button class="btn btn-warning m-2" routerLink="editUsu" (click)="editarUsuario(usuario.dniUsuario)">editar</button>
+                    
+                    <button class="btn btn-danger" (click)="eliminarUsuario(usuario.dniUsuario)">Eliminar</button>
+                </td>
+                </tr>
+              </tbody>
+        </table>
+      </div>
+      <div class="button-container d-flex justify-content-center">
+        <button class="btn btn-success half-width-button" routerLink="/">Volver</button>
+      </div>
+    </div>
+</div>
+
